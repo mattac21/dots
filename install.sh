@@ -29,7 +29,7 @@ if [ -n "$2" ]; then
 fi
 
 # some essential packages to get started
-PACKAGES="git make gcc wget curl tmux zsh"
+PACKAGES="git make gcc wget curl tmux zsh node vim llvm ruby"
 install_packages "$PACKAGES"
 
 # oh my zsh!
@@ -38,16 +38,18 @@ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O 
 # change shell to zsh
 chsh -s $(which zsh)
 
-# not installing neovim because it is too os specific, you should
-# install the nightly version of neovim on your own. 
-#
-# https://github.com/neovim/neovim/wiki/Installing-Neovim#install-from-package
-#
-# neovim expects config files at $HOME/.config/nvim so we create a symlink
-# for convenience
-ln -f -s $THIS_SCRIPT_PATH/neovim $HOME/.config/nvim
+# detect os
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+esac
 
-
-
+# install go (only supporting linux here)
+if [[ "$machine" == "Linux" ]]; then
+    wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
+    rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
+    echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.zshrc
+fi
 
 
