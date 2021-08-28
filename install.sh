@@ -29,7 +29,7 @@ if [ -n "$2" ]; then
 fi
 
 # some essential packages to get started
-PACKAGES="git make gcc wget curl tmux zsh node vim llvm ruby"
+PACKAGES="git make gcc wget curl tmux zsh vim llvm ruby"
 install_packages "$PACKAGES"
 
 # oh my zsh!
@@ -48,8 +48,12 @@ esac
 # install go (only supporting linux here)
 if [[ "$machine" == "Linux" ]]; then
     wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
-    rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
+    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.17.linux-amd64.tar.gz
     echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.zshrc
+
+    rm go1.17.linux-amd64.tar.gz
+    source $HOME/.zshrc
 fi
 
+echo "Setup complete!"
 
