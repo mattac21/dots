@@ -34,6 +34,11 @@ install_packages "$PACKAGES"
 
 # oh my zsh!
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+# syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+echo "plugins=( [plugins...] zsh-syntax-highlighting)" >> $HOME/.zshrc
+
+
 
 # change shell to zsh
 chsh -s $(which zsh)
