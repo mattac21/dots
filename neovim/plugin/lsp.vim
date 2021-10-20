@@ -28,19 +28,17 @@ local on_attach = function(client, bufnr)
     ]], false)
   end
   
-  local servers = { "dockerls", "clangd", "jsonls", "pyright", "tsserver", "solargraph", "gopls" }
-  for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {
-      on_attach = on_attach,
-      flags = {
-        debounce_text_changes = 150,
-      }
-    }
-  end
-
 end
 
-
+local servers = { "dockerls", "clangd", "jsonls", "pyright", "tsserver", "solargraph", "gopls" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
 
 require'nvim-lightbulb'.update_lightbulb {
     sign = {

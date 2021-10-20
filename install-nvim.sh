@@ -8,8 +8,7 @@ if [[ "$1" == "ubuntu" ]]; then
     sudo snap install node
 elif [[ "$1" == "fedora" ]]; then
     sudo dnf copr enable agriffis/neovim-nightly
-    sudo dnf install -y neovim python3-neovim gcc-c++ libstdc++-static
-    sudo dnf install nodejs
+    sudo dnf install -y neovim python3-neovim gcc-c++ libstdc++-static nodejs flex bison elfutils-libelf-devel openssl-devel dwarves zstd
 elif [[ "$1" == "osx" ]]; then
     brew install --HEAD neovim
 else
