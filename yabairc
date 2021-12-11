@@ -1,0 +1,71 @@
+# load scripting additions on startup
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# debug output on
+yabai -m config debug_output on
+
+# binary space partitioning layout of tiles
+yabai -m config layout bsp
+
+# padding on everything
+yabai -m config top_padding 10
+yabai -m config bottom_padding 10
+yabai -m config left_padding   10
+yabai -m config right_padding  10
+yabai -m config window_gap     10
+
+# auto balance windows
+yabai -m config auto_balance on
+
+# create and label spaces 
+yabai -m display --focus 1
+yabai -m space --create
+yabai -m space --create
+yabai -m space --create
+yabai -m space --create
+yabai -m space --create
+yabai -m space --create
+
+# add room for spacebar at the top
+yabai -m config external_bar all:26:0
+
+# only show shadows on flaoting windows
+yabai -m config window_shadow float
+
+# add windowo border to focused window
+yabai -m config window_border true
+yabai -m config window_border_width 4
+
+# apps to ignore tiling for
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+
+# web space
+yabai -m rule --add app="^Safari$" space=^1
+yabai -m rule --add app="^Firefox$" space=^1
+yabai -m rule --add app="^Google Chrome$" space=^1
+
+# chat space
+yabai -m rule --add app="^Microsoft Teams$" space=^2
+yabai -m rule --add app="^Slack$" space=^2
+yabai -m rule --add app="^Discord$" space=^2
+
+# email space
+yabai -m rule --add app="^Microsoft Outlook$" space=^6
+
+# music space 
+yabai -m rule --add app="^Spotify$" space=^7
+
+# code space
+yabai -m rule --add app="^GoLand$" space=^3
+yabai -m rule --add app="^Intellij IDEA$" space=^3
+yabai -m rule --add app="^Visual Studio Code$" space=^3
+
+# terminals
+yabai -m rule --add app="^iTerm2$" space=^4
+
+# notes
+yabai -m rule --add app="^Notion$" space=^5
+

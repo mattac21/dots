@@ -3,6 +3,8 @@ vim.cmd('hi LspDiagnosticsVirtualTextError guifg=Red ctermfg=Red')
 vim.cmd('hi LspDiagnosticsVirtualTextWarning guifg=Yellow ctermfg=Yellow')
 vim.cmd('hi LspDiagnosticsVirtualTextInformation guifg=White ctermfg=White')
 vim.cmd('hi LspDiagnosticsVirtualTextHint guifg=White ctermfg=White')
+vim.cmd('hi SignColumn ctermbg=none')
+vim.cmd("let g:gruvbox_sign_column = 'bg0'")
 vim.o.hidden = true
 vim.o.whichwrap = 'b,s,<,>,[,],h,l'
 vim.o.pumheight = 10
@@ -24,9 +26,10 @@ vim.o.hlsearch = false
 vim.o.ignorecase = true
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 5
-vim.wo.number = true
 vim.wo.wrap = false
 vim.wo.signcolumn = 'yes'
+vim.wo.rnu = true
+vim.wo.number = true
 vim.o.tabstop = 4
 vim.bo.tabstop = 4
 vim.o.softtabstop = 4

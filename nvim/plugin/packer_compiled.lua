@@ -113,10 +113,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/matt/.local/share/nvim/site/pack/packer/start/nvim-go"
   },
-  ["nvim-lint"] = {
-    loaded = true,
-    path = "/Users/matt/.local/share/nvim/site/pack/packer/start/nvim-lint"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/matt/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
@@ -125,6 +121,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/matt/.local/share/nvim/site/pack/packer/start/nvim-lsputils"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/matt/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/matt/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
@@ -132,6 +132,10 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/matt/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
+  ["onedarkpro.nvim"] = {
+    loaded = true,
+    path = "/Users/matt/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
