@@ -29,7 +29,7 @@ mkdir -p $HOME/.config/
 ln -f -s $THIS_SCRIPT_PATH/neovim $HOME/.config/nvim
 
 # install language servers 
-GO111MODULE=on go get golang.org/x/tools/gopls@latest
+GO111MODULE=on go install golang.org/x/tools/gopls@latest
 sudo npm install -g pyright bash-language-server vscode-langservers-extracted dockerfile-language-server-nodejs typescript typescript-language-server
 gem install --user-install solargraph
 
