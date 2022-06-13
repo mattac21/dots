@@ -2,19 +2,20 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
+  use 'lukas-reineke/indent-blankline.nvim'
+
   -- colors
   use 'morhetz/gruvbox'
+  use '~/code/gruvbox-baby'
   use 'olimorris/onedarkpro.nvim'
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
 
-  -- lines
+  use 'kyazdani42/nvim-web-devicons'
+  use 'feline-nvim/feline.nvim'
+
   use {
-    'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
-  use {
-    'akinsho/bufferline.nvim',
-    requires = 'kyazdani42/nvim-web-devicons'
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
   -- searching
@@ -39,8 +40,7 @@ return require('packer').startup(function()
   use 'RishabhRD/nvim-lsputils'
 
   -- better go support
-  use 'crispgm/nvim-go'
-  -- dependencies for nvim-go
+  use 'ray-x/go.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-lua/popup.nvim'
 end)
